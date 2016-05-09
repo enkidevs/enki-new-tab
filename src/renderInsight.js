@@ -5,8 +5,7 @@ export default function render (insight) {
   const template = Handlebars.compile(source)
   const html = template(insight)
 
-  const container = document.getElementById('enki-insights')
-  container.style.background = (insight.topic || {}).color
+  document.getElementById('enki-container').style.background = (insight.topic || {}).color
 
-  container.innerHTML = html
+  document.getElementById('enki-insights').innerHTML = html
 }

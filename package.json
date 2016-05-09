@@ -19,5 +19,8 @@
   "devDependencies": {
     "@mathieudutour/js-fatigue": "1.0.5",
     "less": "2.7.0"
+  },
+  "dependencies": {
+    "handlebars": "4.0.5"
   }
 }

@@ -1,0 +1,22 @@
+@maxContentWidth: 375px;
+
+.flexColumn {
+  display:flex;
+  flex-direction: column;
+
+  &.alignCenter {
+    align-items: center;
+  }
+
+  &.justifyCenter {
+    justify-content: center
+  }
+}
+
+.viewHeight {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: @maxContentWidth;
+}

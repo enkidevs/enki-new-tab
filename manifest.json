@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Enki New Tab",
+  "version": "0.0.1",
+  "description": "Shows Enki Insights on the New Tab page.",
+  "icons": {
+    "16": "assets/icon-16.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "homepage_url": "https://github.com/enkidevs/enki-new-tab",
+  "offline_enabled": false,
+  "permissions": [
+    "storage",
+    "https://insights.enki.com/api/insights/live/0"
+  ]
+}

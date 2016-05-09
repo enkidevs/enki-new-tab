@@ -1,0 +1,22 @@
+{
+  "name": "enki-new-tab",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enkidevs/enki-new-tab.git"
+  },
+  "author": "Mathieu Dutour <mathieu@dutour.me> (http://mathieu.dutour.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enkidevs/enki-new-tab/issues"
+  },
+  "homepage": "https://github.com/enkidevs/enki-new-tab#readme",
+  "devDependencies": {
+    "@mathieudutour/js-fatigue": "1.0.5"
+  }
+}

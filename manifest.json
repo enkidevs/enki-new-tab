@@ -11,6 +11,7 @@
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self' 'unsafe-eval'",
   "homepage_url": "https://github.com/enkidevs/enki-new-tab",
   "offline_enabled": false,
   "permissions": [

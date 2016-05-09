@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/enkidevs/enki-new-tab#readme",
   "devDependencies": {
-    "@mathieudutour/js-fatigue": "1.0.5"
+    "@mathieudutour/js-fatigue": "1.0.5",
+    "less": "2.7.0"
   }
 }

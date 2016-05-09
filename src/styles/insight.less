@@ -18,125 +18,6 @@
     &::-webkit-scrollbar { width: 0 !important }
   }
 
-  .footnote-clickable-area {
-      user-select: none;
-      display: inline-block;
-      text-align: center;
-      border-radius: 50%;
-      width: 32px;
-      margin-left: -12px;
-      margin-right: -10px;
-  }
-
-  .footnote-number {
-    cursor: default;
-    user-select: none;
-    text-align: center;
-    vertical-align: super;
-    font-size: 73%;
-    margin: 1px;
-    display: inline-block;
-    color: @contrast-color;
-    &.in-code {
-      letter-spacing: -1.4px;
-    }
-  }
-
-  .footnote-number:after {
-    user-select: none;
-    content: ']';
-  }
-  .footnote-number:before {
-    user-select: none;
-    content: '[';
-  }
-
-  .footnote-title {
-    display: block;
-    position: relative;
-    margin-top: 5px;
-    margin-bot: 5px;
-    font-size: 12px;
-    .footnote-title-num {
-      color: @contrast-color;
-      // position: absolute;
-      // left: -13px;
-      font-weight: 700;
-    }
-    .footnote-title-num:after {
-      content: '.';
-    }
-    // .footnote-title-num:before {
-    //   content: '[';
-    // }
-    .footnote-title-type {
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-  }
-
-  .insight-popup {
-    z-index: 1;
-    width: 100%;
-    padding: 0 20px;
-    background: #E6E6E6;
-    position: absolute;
-    height: 50%;
-    left: 0;
-    bottom: 0;
-    color: @secondary-separator-color;
-    .insight-popup-inner-scroll {
-      height: 100%;
-      overflow: scroll;
-      -webkit-overflow-scrolling: touch;
-      &::-webkit-scrollbar { width: 0 !important }
-    }
-    .insight-popup-content {
-      padding: 0 0 92px;
-    }
-
-    .insight-popup-close {
-      color: @separator-color;
-      position: absolute;
-      top: 8px;
-    }
-    .insight-popup-header {
-      text-align: center;
-      height: 40px;
-      line-height: 40px;
-      font-size: 12px;
-      font-weight: 500;
-      .insight-popup-title {
-        margin-left: 5px;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-      }
-      .insight-popup-num {
-        color: @contrast-color;
-      }
-      .insight-popup-num:after {
-        content: ']';
-      }
-      .insight-popup-num:before {
-        content: '[';
-      }
-    }
-    pre {
-      margin: 0;
-      padding-left: 0;
-      overflow: scroll;
-      &::-webkit-scrollbar {
-        width: 0 !important;
-        height: 0 !important;
-      }
-    }
-    pre, code {
-      background-color: #F9F9F9;
-      color: black;
-    }
-  }
-
   & * {
     user-select: all;
 
@@ -144,18 +25,6 @@
       background: @contrast-color;
       color: @text-color;
     }
-  }
-  .practice-question-button {
-    background: @link-color;
-    width: 90%;
-    margin-left: 5%;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    margin-top: 30px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
   .insight-category {
@@ -177,16 +46,6 @@
     text-align: center;
     p {
       margin: 0;
-    }
-  }
-
-  .author {
-    // HACK: hidding authors for now...
-    display: none;
-    color: @separator-color;
-    font-size: 16px;
-    .at {
-      margin-right: 2px;
     }
   }
 
@@ -289,58 +148,6 @@
       white-space: nowrap;
       color: @text-color;
       text-decoration: underline;
-    }
-  }
-
-  .playground.game-fill-the-gaps {
-    margin: 15px -20px;
-    overflow-y: visible;
-
-    .list-section {
-      margin: 15px 0 0;
-      padding: 0 0 15px;
-      height: auto;
-      text-transform: none;
-      text-align: center;
-      font-size: 16px;
-      h1 {
-        font-weight: 300;
-        padding-top: 15px;
-        color: @secondary-text-color;
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-    }
-    code {
-      color: @text-color;
-      background: transparent;
-    }
-    .sublevel {
-      margin-top: 0;
-      .question {
-        background: @background-color;
-        margin-top: 0;
-      }
-      .answer-options {
-        background: @link-color55;
-      }
-      .answer-option:nth-child(n) {
-        background: @link-color;
-      }
-    }
-    .ripple-button {
-      position: relative;
-      margin-top: 30px;
-      width: 90%;
-      margin-left: 5%;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      padding: 0;
-      border-radius: 5px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
   }
 }

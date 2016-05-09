@@ -4,7 +4,7 @@ import { config } from './config.js'
 let enkiData = null
 
 chrome.storage.local.get('enkiNewTab', (data) => {
-  if (data && data.enkiNewTab && data.enkiNewTab.expiry > Date.now()) {
+  if (data && data.enkiNewTab && isItTheSameDay(data.enkiNewTab.expiry)) {
     enkiData = data.enkiNewTab
   }
 
@@ -23,7 +23,7 @@ chrome.storage.local.get('enkiNewTab', (data) => {
           console.log(insights)
           enkiData = {
             insight: insights.items[0],
-            expiry: Date.now() + 86400000
+            expiry: Date.now()
           }
 
           chrome.storage.local.set({ enkiNewTab: enkiData })
@@ -34,3 +34,7 @@ chrome.storage.local.get('enkiNewTab', (data) => {
       // TODO: error handling
     })
 })
+
+function isItTheSameDay (date) {
+  return new Date(date).getDate() === (new Date().getDate())
+}

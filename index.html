@@ -10,6 +10,7 @@
       <main class="container" id="enki-insights"></main>
     </div>
     <script id="insight-template" type="text/x-handlebars-template">
+      <span class="insight-badge devicons {{topic.deviconsClass}}"></span>
       <div class="insight" >
         <div class="insight-inner-scroll">
           <div class="insight-category">{{category.name}}</div>
@@ -17,7 +18,6 @@
           <div class="insight-content">{{{content}}}</div>
         </div>
       </div>
-      <span class="insight-badge devicons {{topic.deviconsClass}}"></span>
     </script>
     <script src="build/index.js"></script>
   </body>

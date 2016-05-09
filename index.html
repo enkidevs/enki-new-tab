@@ -6,6 +6,15 @@
   </head>
   <body>
     <main id="enki-insights"></main>
+    <script id="insight-template" type="text/x-handlebars-template">
+      <div className="insight" >
+        <div className="insight-inner-scroll">
+          <div className="insight-category">{{category.name}}</div>
+          <div className="headline">{{{headline}}}</div>
+          <div className="insight-content">{{{content}}}</div>
+        </div>
+      </div>
+    </script>
     <script src="build/index.js"></script>
   </body>
 </html>

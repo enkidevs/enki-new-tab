@@ -11,7 +11,11 @@
     </div>
     <script id="insight-template" type="text/x-handlebars-template">
       <span class="insight-badge devicons {{topic.deviconsClass}}"></span>
-      <a href="https://twitter.com/intent/tweet?text={{encodedHeadline}}&url={{encodedURL}}" class="twitter-share-button">Tweet</a>
+      <div class="twitter-share-widget">
+        <div class="btn-o" data-scribe="component:button" style="width: 61px;">
+          <a href="https://twitter.com/intent/tweet?text={{encodedHeadline}}&url={{encodedURL}}" class="btn"><i></i><span class="label">Share</span></a>
+        </div>
+      </div>
       <div class="insight" >
         <div class="insight-inner-scroll">
           <div class="insight-category">{{category.name}}</div>

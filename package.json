@@ -18,9 +18,17 @@
   "homepage": "https://github.com/enkidevs/enki-new-tab#readme",
   "devDependencies": {
     "@mathieudutour/js-fatigue": "1.0.5",
-    "less": "2.7.0"
+    "babel-loader": "^6.2.0",
+    "less": "^2.7.0",
+    "webpack": "^1.13.0"
   },
   "dependencies": {
-    "handlebars": "4.0.5"
+    "fs": "0.0.2",
+    "handlebars": "^4.0.5"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }

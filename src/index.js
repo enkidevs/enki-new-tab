@@ -1,4 +1,5 @@
 import renderInsight from './renderInsight'
+import { isItTheSameDay } from './helpers'
 import { config } from './config.js'
 
 let enkiData = null
@@ -12,11 +13,7 @@ chrome.storage.local.get('enkiNewTab', (data) => {
     return renderInsight(enkiData.insight)
   }
 
-  let headers = {
-    'x-access-token': config.accessToken
-  }
-
-  fetch(config.endpoint, { headers })
+  fetch(config.endpoint)
     .then((response) => {
       if (response.ok) {
         return response.json().then((insights) => {
@@ -34,7 +31,3 @@ chrome.storage.local.get('enkiNewTab', (data) => {
       // TODO: error handling
     })
 })
-
-function isItTheSameDay (date) {
-  return new Date(date).getDate() === (new Date().getDate())
-}

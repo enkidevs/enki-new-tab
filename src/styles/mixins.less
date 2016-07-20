@@ -1,0 +1,130 @@
+@import 'colors.less';
+.h1() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 22.5px;
+  line-height: 27.5px;
+  text-align: center;
+  color: @light;
+}
+
+.h2(@align: center) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: @align;
+  color: @light;
+}
+
+.h3(@align: center) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 17.5px;
+  line-height: 20px;
+  text-align: @align;
+  color: @light;
+}
+
+.h3(light; @align: center) {
+  .h3(@align);
+  color: @light_60;
+}
+
+.h3(dark; @align: center) {
+  .h3(@align);
+  color: @dark-pp;
+}
+
+.h4(@align: center) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: @align;
+  color: @light;
+}
+
+.h4(light; @align: center) {
+  .h4(@align);
+  color: @light_60;
+}
+
+.h5(@align: center) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 15px;
+  text-align: @align;
+  color: @light;
+}
+
+.h5(uppercase; light; @align: center) {
+  .h5(@align);
+  text-transform: uppercase;
+  color: @light_60;
+}
+
+.h5(light; uppercase; @align: center) {
+  .h5(@align);
+  text-transform: uppercase;
+  color: @light_60;
+}
+
+.h5(light; @align: center) {
+  .h5(@align);
+  color: @light_60;
+}
+
+.h5(uppercase; @align: center) {
+  .h5(@align);
+  text-transform: uppercase;
+}
+
+.h6(@align: center) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: @align;
+  color: @light;
+}
+
+.h6(light; @align: center) {
+  .h6(@align);
+  color: @light_60;
+}
+
+.h6(uppercase; @align: center) {
+  .h6(@align);
+  text-transform: uppercase;
+}
+
+.h6(uppercase; light; @align: center) {
+  .h6(@align);
+  text-transform: uppercase;
+  color: @light_60;
+}
+
+.text(@align: left) {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: @align;
+  color: @light_80;
+}
+
+.text(strong; @align: left) {
+  .text(@align);
+  font-weight: 400;
+}
+
+.code(@align: left) {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: @align;
+  color: @light_80;
+}

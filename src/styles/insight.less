@@ -1,69 +1,179 @@
 @import "./colors.less";
+@import "./mixins.less";
 
 .insight {
-  height: 100%;
-  line-height: 24px;
-  font-weight: 300;
-  font-size: 16px;
+  .text;
   position: relative;
-  background: @background-color;
-  color: @secondary-text-color;
+  background: @dark;
 
   .insight-inner-scroll {
-    padding: 0 20px 92px;
-    overflow: hidden;
-    overflow-y: scroll;
-    height: 100%;
+    padding: 0 20px 20px;
     -webkit-overflow-scrolling: touch;
-    &::-webkit-scrollbar { width: 0 !important }
+    &::-webkit-scrollbar { width: 0 !important; }
+  }
+
+  .footnote-clickable-area {
+    user-select: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    width: 32px;
+    margin-left: -12px;
+    margin-right: -10px;
+  }
+
+  .footnote-number {
+    cursor: default;
+    user-select: none;
+    text-align: center;
+    vertical-align: super;
+    font-size: 73%;
+    margin: 1px;
+    display: inline-block;
+    color: @light;
+    &.in-code {
+      letter-spacing: -1.4px;
+    }
+  }
+
+  .footnote-number::after {
+    user-select: none;
+    content: ']';
+  }
+  .footnote-number::before {
+    user-select: none;
+    content: '[';
+  }
+
+  .footnote-title {
+    display: block;
+    position: relative;
+    margin-top: 5px;
+    margin-bot: 5px;
+    font-size: 12px;
+    .footnote-title-num {
+      color: @light_60;
+      font-weight: 700;
+    }
+    .footnote-title-num::after {
+      content: '.';
+    }
+    .footnote-title-type {
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  .insight-popup {
+    z-index: 1;
+    width: 100vw;
+    padding: 0 20px;
+    background: #e6e6e6;
+    position: fixed;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    color: @dark;
+    .insight-popup-inner-scroll {
+      height: 100%;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar { width: 0 !important; }
+    }
+    .insight-popup-content {
+      padding: 0 0 92px;
+    }
+
+    .insight-popup-close {
+      color: @neutral;
+      position: absolute;
+      top: 8px;
+    }
+    .insight-popup-header {
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      font-size: 12px;
+      font-weight: 500;
+      .insight-popup-title {
+        margin-left: 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+      }
+      .insight-popup-num {
+        color: @neutral;
+      }
+      .insight-popup-num::after {
+        content: ']';
+      }
+      .insight-popup-num::before {
+        content: '[';
+      }
+    }
+    pre {
+      margin: 0;
+      padding-left: 0;
+      overflow: scroll;
+      &::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0 !important;
+      }
+    }
+    pre,
+    code {
+      background-color: #f9f9f9;
+      color: black;
+    }
   }
 
   & * {
     user-select: all;
+  }
 
-    &::selection {
-      background: @contrast-color;
-      color: @text-color;
-    }
+  .practice-question-button-wrapper {
+    background: @dark-pp;
+    margin: 20px -20px -15px;
+    padding: 15px;
+    height: 100px;
+  }
+  .practice-question-button {
+    width: 100%;
+    color: @light;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   .insight-category {
     width: 100%;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 20px 0 15px;
-    font-size: 12px;
-    line-height: 14px;
-    font-weight: 400;
+    padding: 20px 0 15px;
+    .h5(uppercase; center);
   }
 
   .headline {
-    font-size: 21px;
-    margin: 15px 0 15px;
+    margin: 0 0 15px;
     line-height: 24px;
-    font-weight: 300;
-    color: @light-secondary-text-color;
-    text-align: center;
+    .h2();
     p {
       margin: 0;
-    }
-    &.link {
-      text-decoration: none;
-      display: block;
     }
   }
 
   pre {
     margin: 0 -20px;
     padding: 5px;
-    background-color: @code-background-color;
+    background-color: @dark-p;
     overflow: hidden;
   }
 
   code {
-    background: @code-background-color;
-    padding: 0px 1px 1px 1px;
-    font-family: 'Roboto Mono', monospace;
+    background: @dark-p;
+    padding: 0 1px 1px;
+    .code;
 
     & > div {
       display: inline-block;
@@ -71,29 +181,41 @@
 
     .width-29-cols {
       padding-left: 14px;
-      font-size: 130%;
+      font-size: 100%;
     }
 
     .width-34-cols {
       padding-left: 14px;
-      font-size: 115%;
+      font-size: 90%;
+
+      @media only screen and (min-device-width: 375px) {
+        font-size: 100%;
+      }
     }
 
     .width-39-cols {
+      font-size: 83%;
       padding-left: 14px;
+
+      @media only screen and (min-device-width: 375px) {
+        font-size: 100%;
+      }
     }
 
     .width-44-cols {
-      // no padding on iphone 4 or 5
-      // see media query for iPhone 6
-    }
+      font-size: 78%;
 
+      @media only screen and (min-device-width: 375px) {
+        font-size: 92%;
+      }
+    }
   }
 
   .headline code {
     background: transparent;
-    padding: 0px;
+    padding: 0;
     color: inherit;
+    font-size: 21px;
   }
 
   .insight-footnotes {
@@ -103,22 +225,11 @@
   }
 
   pre code {
-    font-size: 73%;
     padding: 0;
-    background: @code-background-color;
   }
-
-  p > code {
-    color: @inline-code-color;
-  }
-
-  li > code {
-    color: @inline-code-color;
-  }
-
 
   .list-section {
-    background: @code-background-color;
+    background: @dark-p;
     margin: 15px -20px;
     padding-left: 20px;
   }
@@ -130,15 +241,15 @@
     .link-type {
       position: absolute;
       display: inline-block;
-      color: @secondary-text-color;
+      color: @light_60;
       .link-type-icon {
-        color: @text-color;
-        width:30px;
+        color: @light;
+        width: 30px;
         height: 30px;
         font-size: 150%;
-        margin-left: 0px;
-        margin-right: 0px;
-        padding-left: 0px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
         display: inline-block;
       }
     }
@@ -150,14 +261,79 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      color: @text-color;
+      color: @light;
       text-decoration: underline;
     }
   }
-}
 
-@media only screen and (min-device-width: 375px)  {
-  .width-44-cols {
-    padding-left: 14px;
+  .playground.game-fill-the-gaps {
+    margin: 15px -20px;
+    overflow-y: visible;
+
+    .list-section {
+      margin: 15px 0 0;
+      padding: 0 0 15px;
+      height: auto;
+      text-transform: none;
+      text-align: center;
+      font-size: 16px;
+      h1 {
+        font-weight: 300;
+        padding-top: 15px;
+        color: @light_60;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    &.revision {
+      padding-top: 0;
+      .list-section {
+        background: @dark;
+        text-align: left;
+        color: @light_60;
+        padding-left: 7px;
+      }
+    }
+    code {
+      color: @light !important;
+      background: transparent;
+    }
+    .sublevel {
+      margin-top: 0;
+      .question {
+        background: @dark-p;
+        margin-top: 0;
+      }
+      .answer-options {
+        background: @neutral_40;
+      }
+      .answer-option:nth-child(n) {
+        background: @neutral;
+      }
+    }
+    .ripple-button {
+      position: relative;
+      margin-top: 30px;
+      width: 90%;
+      margin-left: 5%;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      padding: 0;
+      border-radius: 5px;
+    }
+  }
+  .insight-placeholder {
+    text-align: center;
+    width: 100%;
+  }
+
+  .uncovered-insight {
+    width: 100vw;
+    margin-left: -20px;
+    text-align: center;
+    opacity: 0.8;
+    padding: 4px 0;
   }
 }
